@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>California Housing Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+         
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <div class="icon">🏠</div>
+            <h1>California Housing</h1>
+            <p>AI House Price Prediction</p>
+        </header>
+
+        <form id="prediction-form">
+            <h2>Enter House Details</h2>
+
+            <div class="grid">
+                <label>Median Income
+                    <input name="MedInc" type="number"
+                           value="3.5" min="0" step="any" required>
+                </label>
+
+                <label>House Age
+                    <input name="HouseAge" type="number"
+                           value="20" min="0" step="any" required>
+                </label>
+
+                <label>Average Rooms
+                    <input name="AveRooms" type="number"
+                           value="5" min="0" step="any" required>
+                </label>
+
+                <label>Average Bedrooms
+                    <input name="AveBedrms" type="number"
+                           value="1" min="0" step="any" required>
+                </label>
+
+                <label>Population
+                    <input name="Population" type="number"
+                           value="1000" min="0" step="any" required>
+                </label>
+
+                <label>Average Occupancy
+                    <input name="AveOccup" type="number"
+                           value="3" min="0" step="any" required>
+                </label>
+
+                <label>Latitude
+                    <input name="Latitude" type="number"
+                           value="34.05" min="32" max="42"
+                           step="any" required>
+                </label>
+
+                <label>Longitude
+                    <input name="Longitude" type="number"
+                           value="-118.25" min="-125" max="-114"
+                           step="any" required>
+                </label>
+            </div>
+
+            <button id="predict-button"type="submit">
+                Predict House Price
+            </button>
+        </form>
+
+        <p id="message" role="status"></p>
+
+        <section id="result" class="result" hidden>
+            <p>Estimated House Value</p>
+            <h2 id="price"></h2>
+        </section>
+
+        <footer>California Housing | Machine Learning</footer>
+    </main>
+    
+    
+</body>
+</html>
